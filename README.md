@@ -89,7 +89,7 @@ $DIST method=2 finH="$HZ" wmax=6 debug=0
 Using binary:
 -rwxr-xr-x 1 root root 229688 Jan 29 05:56 /content/dist-m4ri/src/dist-m4ri/src/dist_m4ri
 # confinement: 8,8,8,8,
-4 code # distance 
+4 # code distance 
 ```
 
 ## Citation
