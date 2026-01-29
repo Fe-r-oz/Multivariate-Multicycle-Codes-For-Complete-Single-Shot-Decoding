@@ -92,6 +92,99 @@ Using binary:
 4 # code distance 
 ```
 
+### Example I: Confinement Profile of `[[96, 12, 4]]` **multivariate multicycle** code from Table I of [reference](https://arxiv.org/pdf/2601.18879)
+
+```
+%%bash
+cd "PATH_TO_QEC_CODE_DIR"
+DIST="PATH_TO_DIST_M4RI_BINARY"
+
+hx="MM_96_12_4_HX.mtx"
+hz="MM_96_12_4_HZ.mtx"
+
+if [ -f "$hx" ] && [ -f "$hz" ]; then
+    for wmax in 6; do
+        $DIST method=2 finH="$hx" finG="$hz" wmax=$wmax 2>&1 debug=0
+    done
+
+    $DIST method=2 finH="$hx" finG="$hz" wmax=6  2>&1 debug=0
+
+else
+    echo "Files not found!"
+fi
+```
+
+### Output
+
+```
+# confinement: 8,8,8,8,
+4 # code distance
+# confinement: 8,8,8,8,
+4 # code distance
+```
+
+### Example II: Confinement Profile of `[[96, 6, 4]]` **4D toric** code from Table I of [reference](https://arxiv.org/pdf/2506.16910)
+
+```
+%%bash
+cd "PATH_TO_QEC_CODE_DIR"
+DIST="PATH_TO_DIST_M4RI_BINARY"
+
+hx="T_96_6_4_HX.mtx"
+hz="T_96_6_4_HZ.mtx"
+
+if [ -f "$hx" ] && [ -f "$hz" ]; then
+    for wmax in 6; do
+        $DIST method=2 finH="$hx" finG="$hz" wmax=$wmax 2>&1 debug=0
+    done
+
+    $DIST method=2 finH="$hx" finG="$hz" wmax=6  2>&1 debug=0
+
+else
+    echo "Files not found!"
+fi
+```
+
+### Output
+
+```
+# confinement: 4,4,4,
+4 # code distance
+# confinement: 4,4,4,
+4 # code distance
+```
+
+### Example III: Confinement Profile of `[[84, 6, 7]]` **abelian multicycle** code from Table I of [reference](https://arxiv.org/pdf/2506.16910)
+
+```
+%%bash
+cd "PATH_TO_QEC_CODE_DIR"
+DIST="PATH_TO_DIST_M4RI_BINARY"
+
+hx="AM_84_6_7_HX.mtx"
+hz="AM_84_6_7_HZ.mtx"
+
+if [ -f "$hx" ] && [ -f "$hz" ]; then
+    for wmax in 7; do
+        $DIST method=2 finH="$hx" finG="$hz" wmax=$wmax 2>&1 debug=0
+    done
+
+    $DIST method=2 finH="$hx" finG="$hz" wmax=7  2>&1 debug=0
+
+else
+    echo "Files not found!"
+fi
+```
+
+### Output
+
+```
+# confinement: 4,6,6,6,4,4,4
+7 # code distance
+# confinement: 4,6,6,6,4,4,4
+7 # code distance
+```
+
 ## Citation
 
 In any publication or work that utilizes this database, please cite the following.
